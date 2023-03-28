@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,20 @@
     <title>PODCAST PREMIUM</title>
     <link rel="preload" href="./css/normalize.css" as="style">
     <link rel="stylesheet" href="./css/normalize.css">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,600;1,700;1,800;1,900;1,1000&display=swap"
+        rel="stylesheet">
     <!--En esta linea le estamos diciendo que cargue la hoja de estilos "lo mas rapido que pueda"-->
     <link rel="preload" href="./css/style.css" as="style">
     <!--Cargamos una hoja de estilos-->
     <link href="./css/style.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <header class="header">
         <div class="encabezado">
@@ -23,11 +31,10 @@
                         <span class="logo__nombre no-margin centrar-texto">PREMIUM</span>
                     </h1>
                 </a>
-                <nav class="navegacion">
-                    <a href="#" class="navegacion__enlace">Buscar</a>
-                    <a href="#" class="navegacion__enlace">Categorias</a>
-                    <a href="#" class="navegacion__enlace">Top Canales</a>
-                </nav>
+                <div class="buscador">
+                    <input type="text" id="buscador" class="inputBuscador">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass iconoBuscar"></i>
+                </div>
             </div>
         </div>
         <div class="header__texto">
@@ -37,7 +44,7 @@
             </h2>
         </div>
 
-    </header> 
+    </header>
 
     <!--
         <div class="nav-bg">
@@ -48,15 +55,17 @@
             <a href="nosotros.html">Top Canales</a>
         </nav>
     </div> -->
-        
+    <div class="texto-intermedio">
+        <h1>Selecciona una categoria</h1>
+    </div>
     <section class="contenedor sombra">
         <h2>Categorías</h2>
-
         <!--Aqui se escribe el menu de carrusel-->
 
         <div class="carousel">
             <div class="carrusel-list" id="carrusel-list">
-                <button class="carrusel-arrow carrusel-prev" id="button-prev" data-button="button-prev" onclick="app.processingButton(event)">
+                <button class="carrusel-arrow carrusel-prev" id="button-prev" data-button="button-prev"
+                    onclick="app.processingButton(event)">
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
                         class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 320 512">
@@ -65,49 +74,14 @@
                         </path>
                     </svg>
                 </button>
-                <div class="carrusel-track" id="track">
-                    <div class="carrusel">
-                        <a href="/">
-                            <h4> <small>Imagen</small> Mas </h4>
-                            <picture>
-                                <img src="images/prueba.jpg" alt="imagen">
-                            </picture>
-                        </a> 
-                    </div>
-                    <div class="carrusel">
-                        <a href="/">
-                            <h4> <small>Imagen</small> Mas </h4>
-                            <picture>
-                                <img src="images/prueba.jpg" alt="imagen">
-                            </picture>
-                        </a> 
-                    </div>
-                    <div class="carrusel">
-                        <a href="/">
-                            <h4> <small>Imagen</small> Mas </h4>
-                            <picture>
-                                <img src="images/prueba.jpg" alt="imagen">
-                            </picture>
-                        </a> 
-                    </div>
-                    <div class="carrusel">
-                        <a href="/">
-                            <h4> <small>Imagen</small> Mas </h4>
-                            <picture>
-                                <img src="images/prueba.jpg" alt="imagen">
-                            </picture>
-                        </a> 
-                    </div>
-                    <div class="carrusel">
-                        <a href="/">
-                            <h4> <small>Imagen</small> Mas </h4>
-                            <picture>
-                                <img src="images/prueba.jpg" alt="imagen">
-                            </picture>
-                        </a> 
-                    </div>
+
+                <div class="carrusel-track track" id="contenido">
+                    <div class="carrusel"></div>
                 </div>
-                <button class="carrusel-arrow carrusel-next" id="button-next" data-button="button-next" onclick="app.processingButton(event)">
+
+
+                <button class="carrusel-arrow carrusel-next" id="button-next" data-button="button-next"
+                    onclick="app.processingButton(event)">
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                         class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 320 512">
@@ -116,123 +90,49 @@
                         </path>
                     </svg>
                 </button>
-
             </div>
         </div>
+        <template id="cardTop">
+            <div class="card" style="width: 18rem;">
+                <button id="buscarCanales" value="" onclick="cargarCategoria(this.value)">
+                    <img src="" class="card-img-top" alt="">
+                </button>
+                <div class="card-body">
+                    <p class="card-text">
+                    <div class="category-name" id="nombreCategoria"></div>
+                    <!--<a href="" class="load-podcast"></a>-->
+                    </p>
+                </div>
+            </div>
+        </template>
     </section>
 
-    <section class="contenedor sombra">
-        <h2>Categorías</h2>
+    <section class="contenedor sombra canales">
+        <h2>Canales</h2>
 
-        <!--Aqui se escribe el menu de carrusel-->
-
-        <div class="carousel">
-            <div class="carrusel-list" id="carrusel-list">
-                <button class="carrusel-arrow carrusel-prev" id="button-prev" data-button="button-prev" onclick="app.processingButton(event)">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
-                        class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 320 512">
-                        <path fill="currentColor"
-                            d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
-                        </path>
-                    </svg>
-                </button>
-                <div class="carrusel-track" id="track">
-                    <div class="carrusel">
-                        <a href="/">
-                            <h4> <small>Imagen</small> Mas </h4>
-                            <picture>
-                                <img src="images/prueba.jpg" alt="imagen">
-                            </picture>
-                        </a> 
-                    </div>
-                    <div class="carrusel">
-                        <a href="/">
-                            <h4> <small>Imagen</small> Mas </h4>
-                            <picture>
-                                <img src="images/prueba.jpg" alt="imagen">
-                            </picture>
-                        </a> 
-                    </div>
-                    <div class="carrusel">
-                        <a href="/">
-                            <h4> <small>Imagen</small> Mas </h4>
-                            <picture>
-                                <img src="images/prueba.jpg" alt="imagen">
-                            </picture>
-                        </a> 
-                    </div>
-                    <div class="carrusel">
-                        <a href="/">
-                            <h4> <small>Imagen</small> Mas </h4>
-                            <picture>
-                                <img src="images/prueba.jpg" alt="imagen">
-                            </picture>
-                        </a> 
-                    </div>
-                    <div class="carrusel">
-                        <a href="/">
-                            <h4> <small>Imagen</small> Mas </h4>
-                            <picture>
-                                <img src="images/prueba.jpg" alt="imagen">
-                            </picture>
-                        </a> 
+        <div class="row row-cols-1 row-cols-md-4 g-4" id="contenido-canales">
+            <template id="cardChannel">
+                <div class="col">
+                    <div class="card">
+                        <img src="" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text"></p>
+                        </div>
                     </div>
                 </div>
-                <button class="carrusel-arrow carrusel-next" id="button-next" data-button="button-next" onclick="app.processingButton(event)">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
-                        class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 320 512">
-                        <path fill="currentColor"
-                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
-                        </path>
-                    </svg>
-                </button>
-
-            </div>
+            </template>
         </div>
+
     </section>
-    <!--
-    <section class="contenedor sombra">
-        <h2>Mas escuchado hasta el momento</h2>
 
-        <div class="servicios">
-            <section>
-                <h3>Diseño Web</h3>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alien" width="88" height="88" viewBox="0 0 24 24" stroke-width="1.5" stroke="#009988" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M11 17a2.5 2.5 0 0 0 2 0" />
-                    <path d="M12 3c-4.664 0 -7.396 2.331 -7.862 5.595a11.816 11.816 0 0 0 2 8.592a10.777 10.777 0 0 0 3.199 3.064c1.666 1 3.664 1 5.33 0a10.777 10.777 0 0 0 3.199 -3.064a11.89 11.89 0 0 0 2 -8.592c-.466 -3.265 -3.198 -5.595 -7.862 -5.595z" />
-                    <line x1="8" y1="11" x2="10" y2="13" />
-                    <line x1="16" y1="11" x2="14" y2="13" />
-                </svg>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ratione labore debitis, impedit laudantium non sint numquam nulla quas dolores, blanditiis illum incidunt. Rerum, placeat! Similique impedit illo laboriosam assumenda?</p>
-            </section>
-            <section>
-                <h3>Aplicaciones Web</h3>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-apple" width="88" height="88" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M9 7c-3 0 -4 3 -4 5.5c0 3 2 7.5 4 7.5c1.088 -.046 1.679 -.5 3 -.5c1.312 0 1.5 .5 3 .5s4 -3 4 -5c-.028 -.01 -2.472 -.403 -2.5 -3c-.019 -2.17 2.416 -2.954 2.5 -3c-1.023 -1.492 -2.951 -1.963 -3.5 -2c-1.433 -.111 -2.83 1 -3.5 1c-.68 0 -1.9 -1 -3 -1z" />
-                    <path d="M12 4a2 2 0 0 0 2 -2a2 2 0 0 0 -2 2" />
-                </svg>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ratione labore debitis, impedit laudantium non sint numquam nulla quas dolores, blanditiis illum incidunt. Rerum, placeat! Similique impedit illo laboriosam assumenda?</p>
-            </section>
-            <section>
-                <h3>Aqui va otra cosa</h3>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-atom" width="88" height="88" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="12" y1="12" x2="12" y2="12.01" />
-                    <path d="M12 2a4 10 0 0 0 -4 10a4 10 0 0 0 4 10a4 10 0 0 0 4 -10a4 10 0 0 0 -4 -10" transform="rotate(45 12 12)" />
-                    <path d="M12 2a4 10 0 0 0 -4 10a4 10 0 0 0 4 10a4 10 0 0 0 4 -10a4 10 0 0 0 -4 -10" transform="rotate(-45 12 12)" />
-                </svg>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ratione labore debitis, impedit laudantium non sint numquam nulla quas dolores, blanditiis illum incidunt. Rerum, placeat! Similique impedit illo laboriosam assumenda?</p>
-            </section>
-        </div>
-    </section> -->
     <footer>
         <p>All rights reserved. Gerardo Valentino Rosales Ramos</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
     <script src="./index.js"></script>
 </body>
+
 </html>

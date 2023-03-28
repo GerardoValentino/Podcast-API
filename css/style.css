@@ -111,6 +111,7 @@ h1, h2, h3 {
 @media (min-width: 768px) {
     .navegacion {
         display: flex;
+        align-items: center;
         gap: 2rem;
     }
 }
@@ -119,6 +120,23 @@ h1, h2, h3 {
     display: block;
     text-align: center;
     font-size: 1.8rem;
+    color: var(--blanco);
+}
+
+.inputBuscador {
+    border-radius: 2rem;
+    font-family: cursive;
+    padding-inline-start: 1rem;
+    padding: 1rem;
+    font-size: large;
+    width: 40rem;
+}
+
+.fa-solid {
+    font-size: xx-large;
+}
+
+.iconoBuscar {
     color: var(--blanco);
 }
 
@@ -136,6 +154,16 @@ h1, h2, h3 {
     background-color: var(--blanco);
     padding: 2rem;
     border-radius: 2rem;
+}
+
+.texto-intermedio {
+    margin-top: 1rem;
+}
+
+.canales {
+    max-width: 95vw;
+    margin: 2rem auto;
+    height: 70rem;
 }
 
 
@@ -255,3 +283,42 @@ h1, h2, h3 {
     right: 0px;
 }
 
+/*Template*/
+.card {
+    --bs-card-spacer-y: 1rem;
+    --bs-card-spacer-x: 1rem;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-border-width: 1px;
+    --bs-card-border-color: var(--bs-border-color-translucent);
+    --bs-card-border-radius: 0.375rem;
+    --bs-card-box-shadow: ;
+    --bs-card-inner-border-radius: calc(0.375rem - 1px);
+    --bs-card-cap-padding-y: 0.5rem;
+    --bs-card-cap-padding-x: 1rem;
+    --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
+    --bs-card-cap-color: ;
+    --bs-card-height: ;
+    --bs-card-color: ;
+    --bs-card-bg: #fff;
+    --bs-card-img-overlay-padding: 1rem;
+    --bs-card-group-margin: 0.75rem;
+    margin: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    word-wrap: break-word;
+    background-color: var(--secundario);
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: 2rem;
+}
+
+.category-name {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    font-size: small;
+}
