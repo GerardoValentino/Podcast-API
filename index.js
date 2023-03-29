@@ -16,8 +16,14 @@ const cardCanal = document.querySelector('#cardChannel').content
 const fragment_canales = document.createDocumentFragment()
 const contenido_canales = document.querySelector('#contenido-canales')
 
+
+const cardEpisodio = document.querySelector('#cardEpisode').content
+const fragment_episodios = document.createDocumentFragment()
+const contenido_episodios = document.querySelector('#contenido-episodios')
+
 let categories = []
 let canales = []
+let episodios = []
 let pais = 'mx'
 document.addEventListener('DOMContentLoaded', () => {
     loadCategories()
@@ -77,7 +83,6 @@ const loadCategories = () => {
 // Funciones para el menu de carrusel
 function App() { }
 window.onload = function (event) {
-    console.log('Entra a la funcion window.onload')
     var app = new App()
     window.app = app
 }
@@ -124,10 +129,23 @@ const creaCanales = () => {
         cardCanal.querySelector('img').setAttribute('src', item.big_cover_url)
         cardCanal.querySelector('.card-title').textContent = item.title
         cardCanal.querySelector('.card-text').textContent = item.description
+        cardCanal.querySelector('button').setAttribute('value', item.cid)
         const clone = cardCanal.cloneNode(true)
         fragment_canales.appendChild(clone)
     })
     contenido_canales.appendChild(fragment_canales)
+}
+
+const creaEpisodios = () => {
+    episodios.forEach((item) => {
+        console.log(item)
+        cardEpisodio.querySelector('img').setAttribute('src', item.big_cover_url)
+        cardEpisodio.querySelector('.card-title').textContent = item.title
+        cardEpisodio.querySelector('.card-text').textContent = item.description
+        const clone = cardEpisodio.cloneNode(true)
+        fragment_episodios.appendChild(clone)
+    })
+    contenido_episodios.appendChild(fragment_episodios)
 }
 
 
@@ -151,6 +169,27 @@ function cargarCategoria(id) {
             console.log('Respuesta', response.data)
             canales = response.data.list
             creaCanales()
+        })
+        .catch(err => console.error(err));
+}
+
+function cargarCanal(id) {
+    contenido_episodios.innerHTML = ''
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '0e39151c7amsh86c23fd0ad07af8p1ebb07jsne2d4140fe256',
+            'X-RapidAPI-Host': 'podcast-api1.p.rapidapi.com'
+        }
+    };
+    
+    fetch(`https://podcast-api1.p.rapidapi.com/episode_list/v2?cid=${id}`, options)
+        .then(response => response.json())
+        .then(response => {
+            console.log('Lista episodios', response.data)
+            episodios = response.data.episode_list
+            console.log('Arreglo', episodios)
+            creaEpisodios()
         })
         .catch(err => console.error(err));
 }

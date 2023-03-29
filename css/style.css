@@ -205,6 +205,12 @@ a:hover {
     height: 50rem;
 }
 
+.episodios {
+    max-width: 95vw;
+    margin: 2rem auto;
+    height: 50rem;
+}
+
 .ajuste {
     display: flex;
     flex-direction: row;

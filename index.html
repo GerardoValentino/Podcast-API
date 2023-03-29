@@ -75,6 +75,8 @@
     <div class="texto-intermedio">
         <h1>Selecciona una categoria</h1>
     </div>
+
+    <!--CATEGORIAS-->
     <section class="contenedor sombra">
         <h2>Categorías</h2>
         <!--Aqui se escribe el menu de carrusel-->
@@ -124,6 +126,7 @@
         </template>
     </section>
 
+    <!--CANALES-->
     <section class="contenedor sombra canales">
         <h2>Canales</h2>
         <section class="ajuste">
@@ -131,7 +134,9 @@
                 <template id="cardChannel">
                     <div class="col">
                         <div class="card">
-                            <img src="" class="card-img-top" alt="">
+                            <button id="buscarEpisodios" value="" onclick="cargarCanal(this.value)">
+                                <img src="" class="card-img-top" alt="">
+                            </button>
                             <div class="card-body">
                                 <h5 class="card-title"></h5>
                                 <p class="card-text"></p>
@@ -143,6 +148,26 @@
         </section>
 
     </section>
+
+    <!--EPISODIOS-->
+    <section class="contenedor sombra episodios">
+        <h2>Episodios</h2>
+        <section class="ajuste">
+            <div class="row row-cols-1 row-cols-md-4 g-4" id="contenido-episodios">
+                <template id="cardEpisode">
+                    <div class="col">
+                        <div class="card">                           
+                            <img src="" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </section>
+
 
     <footer>
         <p>All rights reserved. Gerardo Valentino Rosales Ramos</p>
