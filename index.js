@@ -3,6 +3,9 @@ const contenido = document.querySelector('#contenido')
 const fragment = document.createDocumentFragment()
 const btnBuscar = document.getElementById('buscador')
 
+const buscar_canales = document.getElementById('buscador-canales')
+const buscar_episodios = document.getElementById('buscador-episodios')
+
 const MX = document.getElementById('MX')
 const US = document.getElementById('US')
 const SP = document.getElementById('ES')
@@ -148,45 +151,73 @@ const creaEpisodios = () => {
     contenido_episodios.appendChild(fragment_episodios)
 }
 
-
-btnBuscar.addEventListener('keyup', () => {
-    console.log('tecla', btnBuscar.value) // Cuando es un input es value; cuando es una etiqueta div, p... es textContent
-    const channels = btnBuscar.value.toLowerCase()
-    const episodes = btnBuscar.value.toLowerCase()
-    const filtro = canales.filter((canal) => {
-        return canal.title.toLowerCase().startsWith(channels)
-    })
-
-    const filtro_ep = episodios.filter((ep) => {
-        return ep.title.toLowerCase().startsWith(episodes)
-    })
-
-    console.log('click_canales', filtro)
-    contenido_canales.innerHTML = ''
-    contenido_episodios.innerHTML = ''
-    if(filtro.length > 0) {
-        filtro.forEach((item) => { // Cada vez que lea un elemento del arreglo se guardara en "song"
-            cardCanal.querySelector('img').setAttribute('src', item.big_cover_url)
-            cardCanal.querySelector('.card-title').textContent = item.title
-            cardCanal.querySelector('.card-text').textContent = item.description
-            cardCanal.querySelector('button').setAttribute('value', item.cid)
-                
-            const clone = cardCanal.cloneNode(true)
-            fragment_canales.appendChild(clone) 
+buscar_canales.addEventListener('keyup', () => {
+    const channels = buscar_canales.value.toLowerCase()
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'b23bd04d11mshc686e5ab012ef2bp148079jsnf0649d868bf8',
+            'X-RapidAPI-Host': 'podcast-api1.p.rapidapi.com'
+        }
+    };
+    
+    fetch(`https://podcast-api1.p.rapidapi.com/search_channel/v2?keyword=${channels}`, options)
+        .then(response => response.json())
+        .then(response => {
+            canales = response.data.channel_list
+            console.log('Canales encontrados', canales)
+            const filtro = canales.filter((canal) => {
+                return canal.title.toLowerCase().startsWith(channels)
+            })
+            contenido_canales.innerHTML = ''
+            if(filtro.length > 0) {
+                filtro.forEach((item) => { // Cada vez que lea un elemento del arreglo se guardara en "song"
+                    cardCanal.querySelector('img').setAttribute('src', item.big_cover_url)
+                    cardCanal.querySelector('.card-title').textContent = item.title
+                    cardCanal.querySelector('.card-text').textContent = item.description
+                    cardCanal.querySelector('button').setAttribute('value', item.cid)
+                        
+                    const clone = cardCanal.cloneNode(true)
+                    fragment_canales.appendChild(clone) 
+                })
+                contenido_canales.appendChild(fragment_canales) 
+            }
         })
-        contenido_canales.appendChild(fragment_canales) 
-    }
-    if (filtro_ep.length > 0) {
-        filtro_ep.forEach((item) => {
-            cardEpisodio.querySelector('img').setAttribute('src', item.big_cover_url)
-            cardEpisodio.querySelector('.card-title').textContent = item.title
-            cardEpisodio.querySelector('.card-text').textContent = item.description
+        .catch(err => console.error(err));
+})
 
-            const clone_ep = cardEpisodio.cloneNode(true)
-            fragment_episodios.appendChild(clone_ep)
+buscar_episodios.addEventListener('keyup', () => {
+    const episodes = buscar_episodios.value.toLowerCase()
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'b23bd04d11mshc686e5ab012ef2bp148079jsnf0649d868bf8',
+            'X-RapidAPI-Host': 'podcast-api1.p.rapidapi.com'
+        }
+    };
+    
+    fetch(`https://podcast-api1.p.rapidapi.com/search_episode?keyword=${episodes}`, options)
+        .then(response => response.json())
+        .then(response => {
+            console.log('Episodios encontrados', response)
+            episodios = response.data
+            const filtro_ep = episodios.filter((ep) => {
+                return ep.title.toLowerCase().startsWith(episodes)
+            })
+            contenido_episodios.innerHTML = ''
+            if (filtro_ep.length > 0) {
+                filtro_ep.forEach((item) => {
+                    cardEpisodio.querySelector('img').setAttribute('src', item.big_cover_url)
+                    cardEpisodio.querySelector('.card-title').textContent = item.title
+                    cardEpisodio.querySelector('.card-text').textContent = item.description
+        
+                    const clone_ep = cardEpisodio.cloneNode(true)
+                    fragment_episodios.appendChild(clone_ep)
+                })
+                contenido_episodios.appendChild(fragment_episodios)
+            }
         })
-        contenido_episodios.appendChild(fragment_episodios)
-    }
+        .catch(err => console.error(err));
 })
 
 function cargarCategoria(id) {
@@ -194,7 +225,7 @@ function cargarCategoria(id) {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '0e39151c7amsh86c23fd0ad07af8p1ebb07jsne2d4140fe256',
+            'X-RapidAPI-Key': 'b23bd04d11mshc686e5ab012ef2bp148079jsnf0649d868bf8',
             'X-RapidAPI-Host': 'podcast-api1.p.rapidapi.com'
         }
     };
@@ -214,7 +245,7 @@ function cargarCanal(id) {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '0e39151c7amsh86c23fd0ad07af8p1ebb07jsne2d4140fe256',
+            'X-RapidAPI-Key': 'b23bd04d11mshc686e5ab012ef2bp148079jsnf0649d868bf8',
             'X-RapidAPI-Host': 'podcast-api1.p.rapidapi.com'
         }
     };

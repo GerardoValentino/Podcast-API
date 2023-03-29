@@ -136,6 +136,10 @@ h1, h2, h3 {
     font-size: xx-large;
 }
 
+.sombra h2 {
+    color: var(--blanco);
+}
+
 .boton {
     border-block: none;
     border-inline: none;
@@ -144,6 +148,10 @@ h1, h2, h3 {
 
 .iconoBuscar {
     color: var(--blanco);
+}
+
+.canls, iconoBuscar {
+    color: #212121;
 }
 
 .pais ul {
@@ -210,14 +218,23 @@ a:hover {
 .canales {
     max-width: 95vw;
     margin: 2rem auto;
-    height: 50rem;
+    height: 58rem;
     background-color: white;
+}
+
+.canales h2 {
+    color: var(--negro);
+}
+
+.canls {
+    display: flex;
+    justify-content: center;
 }
 
 .episodios {
     max-width: 95vw;
     margin: 2rem auto;
-    height: 50rem;
+    height: 58rem;
 }
 
 .ajuste {
