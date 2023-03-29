@@ -3,14 +3,56 @@ const contenido = document.querySelector('#contenido')
 const fragment = document.createDocumentFragment()
 const btnBuscar = document.getElementById('buscador')
 
+const MX = document.getElementById('MX')
+const US = document.getElementById('US')
+const SP = document.getElementById('ES')
+const BR = document.getElementById('BR')
+const UK = document.getElementById('UK')
+const FR = document.getElementById('FR')
+const GM = document.getElementById('GE')
+const CA = document.getElementById('CA')
+
 const cardCanal = document.querySelector('#cardChannel').content
 const fragment_canales = document.createDocumentFragment()
 const contenido_canales = document.querySelector('#contenido-canales')
 
 let categories = []
 let canales = []
+let pais = 'mx'
 document.addEventListener('DOMContentLoaded', () => {
     loadCategories()
+})
+
+MX.addEventListener('click', () => {
+    pais = 'mx'
+})
+
+US.addEventListener('click', () => {
+    pais = 'us'
+})
+
+SP.addEventListener('click', () => {
+    pais = 'sp'
+})
+
+BR.addEventListener('click', () => {
+    pais = 'br'
+})
+
+UK.addEventListener('click', () => {
+    pais = 'uk'
+})
+
+FR.addEventListener('click', () => {
+    pais = 'fr'
+})
+
+GM.addEventListener('click', () => {
+    pais = 'gm'
+})
+
+CA.addEventListener('click', () => {
+    pais = 'ca'
 })
 
 const loadCategories = () => {
@@ -94,6 +136,7 @@ btnBuscar.addEventListener('keyup', () => {
 })
 
 function cargarCategoria(id) {
+    contenido_canales.innerHTML = ''
     const options = {
         method: 'GET',
         headers: {
@@ -102,7 +145,7 @@ function cargarCategoria(id) {
         }
     };
 
-    fetch(`https://podcast-api1.p.rapidapi.com/top_channels/v2?category_id=${id}&country=us`, options)
+    fetch(`https://podcast-api1.p.rapidapi.com/top_channels/v2?category_id=${id}&country=${pais}`, options)
         .then(response => response.json())
         .then(response => {
             console.log('Respuesta', response.data)

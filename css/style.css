@@ -140,6 +140,45 @@ h1, h2, h3 {
     color: var(--blanco);
 }
 
+.pais ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pais ul a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--blanco);
+    padding: 12px 20px;
+    display: block;
+}
+
+a:hover {
+    background-color: black;
+}
+
+.pais ul li ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    display: none;
+}
+
+.pais ul li ul li {
+    width: 18rem;
+    position: relative;
+}
+
+.pais ul li:hover > ul {
+    display: block;
+}
+
+.country {
+    cursor: pointer;
+}
+
 .contenedor {
     max-width: 95vw;
     margin: 2rem auto;
@@ -163,7 +202,16 @@ h1, h2, h3 {
 .canales {
     max-width: 95vw;
     margin: 2rem auto;
-    height: 70rem;
+    height: 50rem;
+}
+
+.ajuste {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow-y: scroll;
+    height: 45rem;
 }
 
 
