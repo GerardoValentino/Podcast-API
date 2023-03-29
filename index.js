@@ -68,7 +68,7 @@ const loadCategories = () => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '0e39151c7amsh86c23fd0ad07af8p1ebb07jsne2d4140fe256',
+            'X-RapidAPI-Key': 'b23bd04d11mshc686e5ab012ef2bp148079jsnf0649d868bf8',
             'X-RapidAPI-Host': 'podcast-api1.p.rapidapi.com'
         }
     };

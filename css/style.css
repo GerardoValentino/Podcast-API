@@ -90,7 +90,7 @@ h1, h2, h3 {
     .barra {
         display: flex;
         justify-content: space-around;
-        align-items: center;
+        align-items: baseline;
     }    
 }
 
@@ -148,10 +148,6 @@ h1, h2, h3 {
 
 .iconoBuscar {
     color: var(--blanco);
-}
-
-.canls, iconoBuscar {
-    color: #212121;
 }
 
 .pais ul {
@@ -229,6 +225,24 @@ a:hover {
 .canls {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.ep {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.canls, .iconoBuscarCan {
+    color: #212121;
+}
+
+.ep, .iconoBuscar {
+    color: #ffffff;
 }
 
 .episodios {
