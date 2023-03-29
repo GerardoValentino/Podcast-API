@@ -32,7 +32,7 @@
                     </h1>
                 </a>
                 <div class="buscador">
-                    <input type="text" id="buscador" class="inputBuscador">
+                    <input type="text" id="buscador" class="inputBuscador" placeholder="Buscar canales o episodios">
                     <i class="fa-sharp fa-solid fa-magnifying-glass iconoBuscar"></i>
                 </div>
                 <div class="pais">
@@ -113,7 +113,7 @@
         </div>
         <template id="cardTop">
             <div class="card" style="width: 18rem;">
-                <button id="buscarCanales" value="" onclick="cargarCategoria(this.value)">
+                <button class="boton" id="buscarCanales" value="" onclick="cargarCategoria(this.value)">
                     <img src="" class="card-img-top" alt="">
                 </button>
                 <div class="card-body">
@@ -134,7 +134,7 @@
                 <template id="cardChannel">
                     <div class="col">
                         <div class="card">
-                            <button id="buscarEpisodios" value="" onclick="cargarCanal(this.value)">
+                            <button class="boton" id="buscarEpisodios" value="" onclick="cargarCanal(this.value)">
                                 <img src="" class="card-img-top" alt="">
                             </button>
                             <div class="card-body">

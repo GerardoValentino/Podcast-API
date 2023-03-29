@@ -151,6 +151,42 @@ const creaEpisodios = () => {
 
 btnBuscar.addEventListener('keyup', () => {
     console.log('tecla', btnBuscar.value) // Cuando es un input es value; cuando es una etiqueta div, p... es textContent
+    const channels = btnBuscar.value.toLowerCase()
+    const episodes = btnBuscar.value.toLowerCase()
+    const filtro = canales.filter((canal) => {
+        return canal.title.toLowerCase().startsWith(channels)
+    })
+
+    const filtro_ep = episodios.filter((ep) => {
+        return ep.title.toLowerCase().startsWith(episodes)
+    })
+
+    console.log('click_canales', filtro)
+    contenido_canales.innerHTML = ''
+    contenido_episodios.innerHTML = ''
+    if(filtro.length > 0) {
+        filtro.forEach((item) => { // Cada vez que lea un elemento del arreglo se guardara en "song"
+            cardCanal.querySelector('img').setAttribute('src', item.big_cover_url)
+            cardCanal.querySelector('.card-title').textContent = item.title
+            cardCanal.querySelector('.card-text').textContent = item.description
+            cardCanal.querySelector('button').setAttribute('value', item.cid)
+                
+            const clone = cardCanal.cloneNode(true)
+            fragment_canales.appendChild(clone) 
+        })
+        contenido_canales.appendChild(fragment_canales) 
+    }
+    if (filtro_ep.length > 0) {
+        filtro_ep.forEach((item) => {
+            cardEpisodio.querySelector('img').setAttribute('src', item.big_cover_url)
+            cardEpisodio.querySelector('.card-title').textContent = item.title
+            cardEpisodio.querySelector('.card-text').textContent = item.description
+
+            const clone_ep = cardEpisodio.cloneNode(true)
+            fragment_episodios.appendChild(clone_ep)
+        })
+        contenido_episodios.appendChild(fragment_episodios)
+    }
 })
 
 function cargarCategoria(id) {
