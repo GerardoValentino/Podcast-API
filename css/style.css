@@ -28,7 +28,10 @@ body {
     background-image: linear-gradient(to bottom, #dfe9f3a3 0%, var(--blanco) 100%);*/                                                
 }
 
-
+.icono {
+    width: 30rem;
+    border-radius: 1rem;
+}
 
 /*Utilidades*/
 .no-margin {
@@ -36,7 +39,13 @@ body {
 }
 
 .eslogan {
+    font-size: 3rem;
     padding-bottom: 0;
+}
+
+.subtitulo {
+    font-size: 2rem;
+    font-style: oblique;
 }
 
 .no-padding {
@@ -74,9 +83,12 @@ h1, h2, h3 {
 }
 
 .header__texto {
+    display: flex;
     text-align: center;
     color: var(--blanco);
-    margin-top: 5rem;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
 }
 
 
@@ -124,10 +136,11 @@ h1, h2, h3 {
 }
 
 .inputBuscador {
-    border-radius: 2rem;
+    border-radius: 3rem;
+    border-style: dashed;
     font-family: cursive;
-    padding-inline-start: 1rem;
     padding: 1rem;
+    margin: 1.3rem;
     font-size: large;
     width: 40rem;
 }
@@ -148,6 +161,10 @@ h1, h2, h3 {
 
 .iconoBuscar {
     color: var(--blanco);
+}
+
+.cabecera {
+    font-weight: 700;
 }
 
 .pais ul {
@@ -207,14 +224,10 @@ a:hover {
     background-color: currentColor;
 }
 
-.texto-intermedio {
-    margin-top: 1rem;
-}
-
 .canales {
     max-width: 95vw;
     margin: 2rem auto;
-    height: 58rem;
+    height: 60rem;
     background-color: white;
 }
 
@@ -248,7 +261,7 @@ a:hover {
 .episodios {
     max-width: 95vw;
     margin: 2rem auto;
-    height: 58rem;
+    height: 60rem;
 }
 
 .ajuste {
